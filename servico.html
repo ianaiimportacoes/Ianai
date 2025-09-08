@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - Ianai Importações | Importação da China para Moçambique</title>
+    <meta name="description" content="Serviços completos de importação da China para Moçambique. Consultoria, intermediação comercial e importação completa com segurança e eficiência.">
+    <meta name="keywords" content="importação China, importação Moçambique, serviços importação, consultoria importação, Alibaba, AliExpress, Shein">
+    <meta name="author" content="Ianai Importações">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ianaiimportacoes.site/servico.html">
+    <meta property="og:title" content="Serviços - Ianai Importações | Importação da China para Moçambique">
+    <meta property="og:description" content="Serviços completos de importação da China para Moçambique. Consultoria, intermediação comercial e importação completa.">
+    <meta property="og:image" content="https://ianaiimportacoes.com/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ianaiimportacoes.com/servico.html">
+    <meta property="twitter:title" content="Serviços - Ianai Importações | Importação da China para Moçambique">
+    <meta property="twitter:description" content="Serviços completos de importação da China para Moçambique. Consultoria, intermediação comercial e importação completa.">
+    <meta property="twitter:image" content="https://ianaiimportacoes.com/images/twitter-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ianaiimportacoes.com/servico.html">
+    
+    <!-- Bibliotecas CSS Externas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+   <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="gll.css" type="text/css" media="all" />
+    
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: 'Arial', sans-serif;
+            padding-top: 70px;
+        }
+        
+        #topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #00695C;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 70px;
+        }
+        
+        #topbar.scrolled {
+            background: rgba(0, 105, 92, 0.95);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        #menu-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-right: 1rem;
+        }
+        
+        #company-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background: white;
+            z-index: 1001;
+            transition: all 0.3s ease;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+        
+        #sidebar.open {
+            left: 0;
+        }
+        
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 1rem;
+            background: #00695C;
+            color: white;
+        }
+        
+        .sidebar-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        #close-sidebar {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        
+        #sidebar nav {
+            padding: 1rem 0;
+        }
+        
+        .sidebar-menu-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .sidebar-menu-item:hover, .sidebar-menu-item.active {
+            background: #E8F5F3;
+            color: #00695C;
+            border-left-color: #00695C;
+        }
+        
+        .sidebar-menu-item i:first-child {
+            margin-right: 0.75rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #f9f9f9;
+        }
+        
+        .submenu.open {
+            max-height: 200px;
+        }
+        
+        .submenu-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem 0.75rem 3.5rem;
+            color: #555;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+        
+        .submenu-item:hover {
+            background: #E8F5F3;
+            color: #00695C;
+        }
+        
+        .submenu-item i {
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        #sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        #sidebar-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+        
+        /* Service Cards */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Process Steps */
+        .process-step {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+        
+        .process-step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: #00695C;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        /* Platform Logos */
+        .platform-logo {
+            margin: 0 auto;
+            object-fit: contain;
+        }
+        
+        /* Ajustes de responsividade */
+        @media (max-width: 768px) {
+            .process-step {
+                padding-left: 70px;
+            }
+            
+            .process-step-number {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .hero-section {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Topbar Modernizada -->
+    <div id="topbar">
+        <button id="menu-button" aria-label="Abrir menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h1 id="company-name" class="animate__animated animate__fadeIn">Ianai Importações</h1>
+    </div>
+
+    <!-- Sidebar Menu Modernizado -->
+        <div id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button id="close-sidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav>
+            <a href="index.html" class="sidebar-menu-item">
+                <i class="fas fa-home"></i>
+                Página Principal
+            </a>
+            <a href="servico.html" class="sidebar-menu-item">
+                <i class="fas fa-shipping-fast"></i>
+                Serviços
+            </a>
+            
+            <!-- Categoria de Cursos com Submenu (apenas Importação Básica) -->
+            <a href="#" class="sidebar-menu-item" id="courses-menu">
+                <i class="fas fa-graduation-cap"></i>
+                Cursos
+                <i class="fas fa-chevron-down ml-auto transition-transform duration-300"></i>
+            </a>
+            <div class="submenu">
+                <a href="importacao.html" class="submenu-item">
+                    <i class="fas fa-play-circle"></i>
+                    Importação Básica
+                </a>
+            </div>
+            
+            <a href="contacto.html" class="sidebar-menu-item">
+                <i class="fas fa-envelope"></i>
+                Contacto
+            </a>
+            <a href="loja.html" class="sidebar-menu-item">
+                <i class="fas fa-shopping-cart"></i>
+                Loja Ianai
+            </a>
+            <a href="termos.html" class="sidebar-menu-item">
+                <i class="fas fa-file-contract"></i>
+                Termos e Serviços
+            </a>
+        </nav>
+    </div>
+    <div id="sidebar-overlay"></div>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-[#00695C] to-[#004D40] text-white hero-section px-4 md:px-0">
+        <div class="container mx-auto text-center pt-10">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4 font-serif leading-tight">
+                Nossos Serviços de Importação
+            </h1>
+            <p class="text-lg md:text-xl mb-8 text-[#80CBC4] max-w-3xl mx-auto">
+                Soluções completas para importar da China para Moçambique com segurança e eficiência
+            </p>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 font-serif">Nossos Serviços Principais</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Oferecemos soluções completas para sua importação da China, cuidando de todo o processo para você.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Consultoria -->
+                <div class="service-card bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg">
+                    <div class="text-[#00695C] mb-4 text-center">
+                        <i class="fas fa-chalkboard-teacher text-4xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-gray-800 text-center">Consultoria em Importação</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Orientações especializadas para quem está começando no mundo das importações ou quer otimizar seus processos.</p>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#FFD700] mt-1 mr-2"></i>
+                            <span>Análise de viabilidade do seu produto</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#FFD700] mt-1 mr-2"></i>
+                            <span>Orientação sobre documentação necessária</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#FFD700] mt-1 mr-2"></i>
+                            <span>Estratégias para redução de custos</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Importação Completa -->
+                <div class="service-card bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg">
+                    <div class="text-[#00695C] mb-4 text-center">
+                        <i class="fas fa-boxes text-4xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-gray-800 text-center">Importação Completa</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Cuidamos de todo o processo de importação, desde a compra até a entrega em Moçambique.</p>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#FFD700] mt-1 mr-2"></i>
+                            <span>Compra e negociação com fornecedores</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#FFD700] mt-1 mr-2"></i>
+                            <span>Transporte marítimo e aéreo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#FFD700] mt-1 mr-2"></i>
+                            <span>Desembaraço aduaneiro</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#FFD700] mt-1 mr-2"></i>
+                            <span>Entrega final</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Intermediação -->
+                <div class="service-card bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg">
+                    <div class="text-[#00695C] mb-4 text-center">
+                        <i class="fas fa-handshake text-4xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-gray-800 text-center">Intermediação Comercial</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Facilitamos a comunicação e negociação com fornecedores chineses, eliminando barreiras linguísticas e culturais.</p>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#FFD700] mt-1 mr-2"></i>
+                            <span>Tradução e interpretação</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#FFD700] mt-1 mr-2"></i>
+                            <span>Negociação de preços e condições</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#FFD700] mt-1 mr-2"></i>
+                            <span>Verificação de fornecedores</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plataformas Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 font-serif">Trabalhamos com as Principais Plataformas</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Importamos produtos de todas as principais plataformas de comércio eletrônico da China.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white p-5 rounded-lg shadow-md hover:shadow-lg text-center">
+                    <img src="https://i.ibb.co/08WQP75/transferir-6.png" alt="Alibaba" class="platform-logo mb-4 h-10 mx-auto">
+                    <h3 class="font-semibold text-gray-800">Alibaba</h3>
+                </div>
+                
+                <div class="bg-white p-5 rounded-lg shadow-md hover:shadow-lg text-center">
+                    <img src="https://i.ibb.co/h5bL2c2/transferir-7.png" alt="AliExpress" class="platform-logo mb-4 h-10 mx-auto">
+                    <h3 class="font-semibold text-gray-800">AliExpress</h3>
+                </div>
+                
+                <div class="bg-white p-5 rounded-lg shadow-md hover:shadow-lg text-center">
+                    <img src="https://i.ibb.co/27xGsnQ7/transferir-8.png" alt="Shein" class="platform-logo mb-4 h-10 mx-auto">
+                    <h3 class="font-semibold text-gray-800">Shein</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processo Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 font-serif">Como Funciona Nosso Processo</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Um processo transparente e eficiente para garantir a melhor experiência de importação.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="process-step">
+                    <div class="process-step-number">1</div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Consulta Inicial</h3>
+                    <p class="text-gray-600 text-sm">Você nos informa sobre o produto que deseja importar, quantidade e outras especificações importantes.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-step-number">2</div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Análise e Orçamento</h3>
+                    <p class="text-gray-600 text-sm">Nossa equipe analisa a viabilidade e envia um orçamento detalhado com todos os custos envolvidos.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-step-number">3</div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Compra e Logística</h3>
+                    <p class="text-gray-600 text-sm">Realizamos a compra, cuidamos do transporte e enviamos atualizações regulares sobre o status.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-step-number">4</div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Desembaraço Aduaneiro</h3>
+                    <p class="text-gray-600 text-sm">Nossa equipe especializada cuida de toda a documentação e processos alfandegários.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-step-number">5</div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Entrega Final</h3>
+                    <p class="text-gray-600 text-sm">Seus produtos são entregues no endereço indicado, prontos para uso ou comercialização.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 bg-gradient-to-r from-[#00695C] to-[#004D40] text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-4 font-serif">Pronto para Importar da China?</h2>
+            <p class="text-lg mb-6 max-w-2xl mx-auto text-[#80CBC4]">Entre em contato conosco e descubra como podemos ajudar seu negócio a crescer com produtos de qualidade.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="openWhatsApp('Solicitar orçamento')" class="bg-white text-[#00695C] hover:bg-green-50 px-6 py-2 rounded-lg font-semibold transition duration-300 shadow-lg">
+                    Solicitar Orçamento
+                </button>
+                <button onclick="openWhatsApp('Falar com consultor')" class="border-2 border-white text-white hover:bg-white hover:text-[#00695C] px-6 py-2 rounded-lg font-semibold transition duration-300">
+                    <i class="fas fa-phone-alt mr-2"></i>Fale Conosco
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuButton = document.getElementById('menu-button');
+        const closeButton = document.getElementById('close-sidebar');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const body = document.body;
+        const topbar = document.getElementById('topbar');
+        const coursesMenu = document.getElementById('courses-menu');
+        const submenu = document.querySelector('.submenu');
+        const chevron = coursesMenu.querySelector('.fa-chevron-down');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 20) topbar.classList.add('scrolled');
+            else topbar.classList.remove('scrolled');
+        });
+
+        menuButton.addEventListener('click', function() {
+            sidebar.classList.add('open'); overlay.classList.add('open'); body.classList.add('menu-open');
+        });
+
+        closeButton.addEventListener('click', function() {
+            sidebar.classList.remove('open'); overlay.classList.remove('open'); body.classList.remove('menu-open');
+            submenu.classList.remove('open'); chevron.classList.remove('rotate-180');
+        });
+
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open'); overlay.classList.remove('open'); body.classList.remove('menu-open');
+            submenu.classList.remove('open'); chevron.classList.remove('rotate-180');
+        });
+
+        coursesMenu.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            submenu.classList.toggle('open'); chevron.classList.toggle('rotate-180');
+            sidebar.classList.add('open'); overlay.classList.add('open'); body.classList.add('menu-open');
+        });
+
+        document.querySelectorAll('.submenu-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.stopPropagation();
+                submenu.classList.remove('open'); chevron.classList.remove('rotate-180');
+                sidebar.classList.remove('open'); overlay.classList.remove('open'); body.classList.remove('menu-open');
+            });
+        });
+
+        document.querySelectorAll('.sidebar-menu-item:not(#courses-menu)').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar-menu-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+                sidebar.classList.remove('open'); overlay.classList.remove('open'); body.classList.remove('menu-open');
+            });
+        });
+    });
+    
+    // Função para abrir o WhatsApp
+    function openWhatsApp(message) {
+        const phoneNumber = "+258872203899";
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        window.open(whatsappURL, '_blank');
+    }
+    </script>
+</body>
+</html>
