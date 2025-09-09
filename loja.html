@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Loja Ianai Importações - Produtos Importados de Qualidade</title>
+    <meta name="description" content="Compre os melhores produtos importados na Ianai Importações. Eletrônicos, moda, casa, beleza, automotivo e muito mais com entrega em Moçambique.">
+    <meta name="keywords" content="importados, loja online, compras, eletrônicos, moda, casa, beleza, automotivo, Moçambique, produtos internacionais">
+    <meta name="author" content="Ianai Importações">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ianaiimportacoes.site/loja.html">
+    <meta property="og:title" content="Loja Ianai Importações - Produtos Importados de Qualidade">
+    <meta property="og:description" content="Compre os melhores produtos importados na Ianai Importações. Eletrônicos, moda, casa, beleza, automotivo e muito mais com entrega em Moçambique.">
+    <meta property="og:image" content="https://www.ianaiimportacoes.site/images/logo-ianai.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.ianaiimportacoes.site/loja.html">
+    <meta property="twitter:title" content="Loja Ianai Importações - Produtos Importados de Qualidade">
+    <meta property="twitter:description" content="Compre os melhores produtos importados na Ianai Importações. Eletrônicos, moda, casa, beleza, automotivo e muito mais com entrega em Moçambique.">
+    <meta property="twitter:image" content="https://www.ianaiimportacoes.site/images/logo-ianai.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.ianaiimportacoes.site/loja.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.ianaiimportacoes.site/favicon.ico" type="image/x-icon">
+
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#006666',   // Verde-petróleo
+              secondary: '#004c4c', // Verde-petróleo mais escuro
+              accent: '#d4af37',    // Dourado
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Montserrat', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+
+    <style>
+        /* Estilos específicos da loja */
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #d4af37;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .category-btn {
+            white-space: nowrap;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: #f3f4f6;
+            color: #4b5563;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .category-btn:hover {
+            background-color: #006666;
+            color: white;
+        }
+
+        .product-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .cart-container {
+            position: relative;
+        }
+
+        #sidebar {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #sidebar.active {
+            transform: translateX(0);
+        }
+
+        #sidebar-overlay {
+            display: none;
+        }
+
+        #sidebar-overlay.active {
+            display: block;
+        }
+
+        /* Carrossel de imagens */
+        .carousel-image {
+            display: none;
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .carousel-image.active {
+            display: block;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 60px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 4px;
+        }
+
+        .thumbnail.active {
+            border-color: #006666;
+        }
+
+        /* Galeria de fotos em grade */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .view-all-btn {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #f3f4f6;
+            color: #4b5563;
+            text-align: center;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .view-all-btn:hover {
+            background-color: #006666;
+            color: white;
+        }
+
+        /* Botão de compra */
+        .buy-now-btn {
+            background-color: #d4af37;
+            color: white;
+            font-weight: 600;
+        }
+
+        .buy-now-btn:hover {
+            background-color: #b8941f;
+        }
+
+        /* Estilos para as imagens dos cards para encaixar bem */
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background-color: #f9fafb;
+        }
+
+        /* Alteração para mostrar 2 produtos por linha em todas as larguras */
+        #products-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* Estilo para o modal do carrinho */
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-quantity-btn {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .cart-quantity-input {
+            width: 40px;
+            text-align: center;
+            margin: 0 5px;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        .cart-remove-btn {
+            color: #ef4444;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        /* Estilo para rotação do chevron */
+        .fa-chevron-down.rotate-180 {
+            transform: rotate(180deg);
+        }
+        
+        /* Estilo para quando não há imagens */
+        .no-images {
+            display: none !important;
+        }
+        
+        /* Estilos para elementos de texto vazios */
+        .empty-text {
+            display: none;
+        }
+        
+        /* Ajustes para foco nas imagens */
+        .product-info {
+            margin-top: 8px;
+        }
+        
+        .price-only {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        
+        /* NOVOS ESTILOS PARA O MODAL ALIEXPRESS */
+        .modal-container {
+            max-width: 1000px;
+            width: 95%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .product-gallery {
+            position: relative;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            background: #f8f8f8;
+            border-radius: 8px;
+        }
+        
+        .thumbnail-container {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+        
+        .thumb-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .thumb-img.active {
+            border-color: #006666;
+        }
+        
+        .product-details {
+            padding: 0 20px;
+        }
+        
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        
+        .price-section {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .current-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #e02b2b;
+        }
+        
+        .shipping-info {
+            color: #006666;
+            font-weight: 500;
+            margin: 8px 0;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .qty-btn {
+            width: 36px;
+            height: 36px;
+            border: 1px solid #ddd;
+            background: #f8f8f8;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .qty-input {
+            width: 60px;
+            height: 36px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            border-left: none;
+            border-right: none;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .btn-add-cart {
+            flex: 1;
+            padding: 12px;
+            background: #fff;
+            color: #006666;
+            border: 2px solid #006666;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-add-cart:hover {
+            background: #006666;
+            color: #fff;
+        }
+        
+        .btn-buy-now {
+            flex: 2;
+            padding: 12px;
+            background: #d4af37;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-buy-now:hover {
+            background: #b8941f;
+        }
+        
+        .product-description {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        /* Frete nos cards de produto */
+        .shipping-badge {
+            background: #f0f7f7;
+            color: #006666;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .modal-container {
+                flex-direction: column;
+            }
+            
+            .main-image {
+                height: 300px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+        
+        /* Schema.org structured data */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "Ianai Importações",
+      "description": "Loja online de produtos importados em Moçambique",
+      "url": "https://www.ianaiimportacoes.site",
+      "telephone": "+258872203899",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "MZ"
+      },
+      "openingHours": "Mo-Su 08:00-20:00",
+      "priceRange": "$$",
+      "image": "https://www.ianaiimportacoes.site/images/logo-ianai.jpg",
+      "sameAs": [
+        "https://www.facebook.com/ianaiimportacoes",
+        "https://www.instagram.com/ianaiimportacoes"
+      ]
+    }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Topbar -->
+    <div class="bg-primary text-white p-4 flex justify-between items-center shadow-md">
+        <button id="menu-button" aria-label="Abrir menu" class="text-white">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+        <h1 class="text-xl font-bold animate__animated animate__fadeIn">Ianai Importações</h1>
+        <div class="cart-container">
+            <button id="cart-button" aria-label="Abrir carrinho" class="text-white relative">
+                <i class="fas fa-shopping-cart text-xl"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+   <!-- Sidebar Menu Corrigido -->
+<div id="sidebar" class="fixed left-0 top-0 h-full w-64 bg-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300">
+    <div class="sidebar-header p-4 bg-primary text-white flex justify-between items-center">
+        <span class="font-semibold">Menu</span>
+        <button id="close-sidebar" class="text-white" aria-label="Fechar menu">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <nav class="p-4">
+        <a href="index.html" class="flex items-center py-3 px-4 text-gray-700 hover:bg-gray-100 rounded-lg mb-2">
+            <i class="fas fa-home mr-3"></i>
+            Página Principal
+        </a>
+        <a href="servico.html" class="flex items-center py-3 px-4 text-gray-700 hover:bg-gray-100 rounded-lg mb-2">
+            <i class="fas fa-shipping-fast mr-3"></i>
+            Serviços
+        </a>
+        
+        <!-- Categoria de Cursos com Submenu -->
+        <div class="mb-2">
+            <a href="#" class="flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-gray-100 rounded-lg" id="courses-menu">
+                <div class="flex items-center">
+                    <i class="fas fa-graduation-cap mr-3"></i>
+                    Cursos
+                </div>
+                <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+            </a>
+            <div class="submenu pl-8 mt-1 hidden">
+                <a href="importacao.html" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 rounded-lg text-sm">
+                    <i class="fas fa-play-circle mr-2"></i>
+                    Importação Básica
+                </a>
+            </div>
+        </div>
+        
+        <a href="contacto.html" class="flex items-center py-3 px-4 text-gray-700 hover:bg-gray-100 rounded-lg mb-2">
+            <i class="fas fa-envelope mr-3"></i>
+            Contacto
+        </a>
+        <a href="loja.html" class="flex items-center py-3 px-4 text-gray-700 hover:bg-gray-100 rounded-lg mb-2">
+            <i class="fas fa-shopping-cart mr-3"></i>
+            Loja Ianai
+        </a>
+        <a href="termos.html" class="flex items-center py-3 px-4 text-gray-700 hover:bg-gray-100 rounded-lg">
+            <i class="fas fa-file-contract mr-3"></i>
+            Termos e Serviços
+        </a>
+    </nav>
+</div>
+<div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+    <!-- Modal do Carrinho -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg max-w-md w-11/12 max-h-[80vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-2xl font-bold text-gray-800">Seu Carrinho</h3>
+                    <button id="close-cart-modal" class="text-gray-500 hover:text-gray-700" aria-label="Fechar carrinho">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <div id="cart-items-container" class="mb-6">
+                    <div class="text-center py-8 text-gray-500" id="empty-cart-message">
+                        <i class="fas fa-shopping-cart text-4xl mb-4"></i>
+                        <p>Seu carrinho está vazio</p>
+                    </div>
+                </div>
+
+                <div class="border-t pt-4">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">Subtotal:</span>
+                        <span id="cart-subtotal">MZN 0,00</span>
+                    </div>
+                    <div class="flex justify-between mb-4">
+                        <span class="font-medium">Frete:</span>
+                        <span id="cart-shipping">MZN 0,00</span>
+                    </div>
+                    <div class="flex justify-between mb-4 text-lg font-bold">
+                        <span>Total:</span>
+                        <span id="cart-total">MZN 0,00</span>
+                    </div>
+
+                    <button id="checkout-btn" class="w-full bg-primary hover:bg-secondary text-white font-semibold py-3 rounded-lg transition duration-300">
+                        Finalizar Compra
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <!-- Barra de Pesquisa -->
+        <section class="bg-gray-100 py-4 px-4">
+            <div class="container mx-auto">
+                <div class="relative max-w-2xl mx-auto">
+                    <input type="text" id="search-input" placeholder="Pesquisar produtos..." class="w-full py-3 px-4 pr-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" />
+                    <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-primary" aria-label="Pesquisar">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categorias -->
+        <section class="py-4 bg-white border-b">
+            <div class="container mx-auto px-4">
+                <div class="flex overflow-x-auto space-x-4 py-2" id="categories-container">
+                <!--    <a href="loja.html" class="category-btn">Todos</a>-->
+                    <a href="electronico.html" class="category-btn">Eletrônicos</a>
+                    <a href="moda.html" class="category-btn">Moda</a>
+                    <a href="casa.html" class="category-btn">Casa</a>
+                    <a href="beleza.html" class="category-btn">Beleza</a>
+                    <a href="automotivo.html" class="category-btn">Automotivo</a>
+                    <a href="industria.html" class ="category-btn">Indústria e ferramentas </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Produtos -->
+        <section class="py-8 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">Nossos Produtos</h2>
+
+                <div id="products-container" class="grid gap-6">
+                    <div class="text-center py-12 text-gray-500 col-span-full">
+                        <i class="fas fa-spinner fa-spin text-4xl mb-4"></i>
+                        <p>Carregando produtos...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal do Produto (Redesenhado no estilo AliExpress) -->
+    <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="modal-container bg-white rounded-lg flex max-h-[90vh] overflow-hidden">
+            <div class="p-6 flex-1 overflow-y-auto">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="modal-product-name" class="text-2xl font-bold text-gray-800"></h3>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700" aria-label="Fechar modal do produto">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="product-gallery flex-1">
+                        <img id="main-product-image" src="" alt="Imagem do produto" class="main-image">
+                        <div class="thumbnail-container">
+                            <!-- Miniaturas serão adicionadas via JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="product-details flex-1">
+                        <div class="price-section">
+                            <div class="current-price" id="modal-product-price"></div>
+                            <div class="shipping-info" id="modal-product-shipping"></div>
+                        </div>
+
+                        <div class="quantity-selector">
+                            <span class="mr-3 font-medium">Quantidade:</span>
+                            <div class="flex">
+                                <button id="decrease-quantity" class="qty-btn">-</button>
+                                <input type="number" id="quantity" value="1" min="1" class="qty-input">
+                                <button id="increase-quantity" class="qty-btn">+</button>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button id="add-to-cart-modal" class="btn-add-cart">
+                                <i class="fas fa-shopping-cart mr-2"></i> Adicionar ao Carrinho
+                            </button>
+                            <button id="buy-now-btn" class="btn-buy-now">
+                                <i class="fas fa-bolt mr-2"></i> Comprar Agora
+                            </button>
+                        </div>
+
+                        <div class="product-description">
+                            <h4 class="font-bold mb-3">Descrição do Produto</h4>
+                            <p id="modal-product-description" class="text-gray-700"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-primary text-white py-6 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Ianai Importações. Todos os direitos reservados.</p>
+            <p class="text-sm mt-2">Loja online de produtos importados em Moçambique</p>
+        </div>
+    </footer>
+
+    <script>
+        const SHEET_URL='https://docs.google.com/spreadsheets/d/1g_i3Vy-aLffhYtvBAi1P_XVmLPmVIor88n589HetHe4/export?format=csv';
+        const WHATSAPP_NUMBER = '25887 2203899'; // Número do WhatsApp para contato
+
+        const productsContainer = document.getElementById('products-container');
+        const searchInput = document.getElementById('search-input');
+        const cartCount = document.getElementById('cart-count');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const closeSidebar = document.getElementById('close-sidebar');
+        const menuButton = document.getElementById('menu-button');
+        const cartButton = document.getElementById('cart-button');
+        const cartModal = document.getElementById('cart-modal');
+        const closeCartModal = document.getElementById('close-cart-modal');
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const emptyCartMessage = document.getElementById('empty-cart-message');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const cartShipping = document.getElementById('cart-shipping');
+        const cartTotal = document.getElementById('cart-total');
+        const checkoutBtn = document.getElementById('checkout-btn');
+
+        const productModal = document.getElementById('product-modal');
+        const closeModal = document.getElementById('close-modal');
+        const modalProductName = document.getElementById('modal-product-name');
+        const modalProductDescription = document.getElementById('modal-product-description');
+        const modalProductPrice = document.getElementById('modal-product-price');
+        const modalProductShipping = document.getElementById('modal-product-shipping');
+        const mainProductImage = document.getElementById('main-product-image');
+        const thumbnailContainer = document.querySelector('.thumbnail-container');
+        const quantityInput = document.getElementById('quantity');
+        const decreaseQuantityBtn = document.getElementById('decrease-quantity');
+        const increaseQuantityBtn = document.getElementById('increase-quantity');
+        const addToCartModalBtn = document.getElementById('add-to-cart-modal');
+        const buyNowBtn = document.getElementById('buy-now-btn');
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let allProducts = [];
+        let filteredProducts = [];
+        let currentProduct = null;
+        let productImages = [];
+
+        // Menu lateral toggle
+        menuButton.addEventListener('click', () => {
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+        });
+
+        closeSidebar.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+        });
+
+        sidebarOverlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+        });
+
+        // Toggle para submenus (apenas para Cursos, já que Produtos foi removido)
+        const coursesMenu = document.getElementById('courses-menu');
+        coursesMenu.addEventListener('click', (event) => {
+            event.preventDefault();
+            const submenu = coursesMenu.nextElementSibling;
+            submenu.classList.toggle('hidden');
+            const chevron = coursesMenu.querySelector('.fa-chevron-down');
+            chevron.classList.toggle('rotate-180');
+        });
+
+        // Buscar produtos da planilha Google Sheets
+        async function fetchProducts() {
+            try {
+                productsContainer.innerHTML = `
+                    <div class="text-center py-12 text-gray-500 col-span-full">
+                        <i class="fas fa-spinner fa-spin text-4xl mb-4"></i>
+                        <p>Carregando produtos...</p>
+                    </div>
+                `;
+
+                const response = await fetch(SHEET_URL);
+                const csvData = await response.text();
+
+                const products = csvToJson(csvData);
+
+                if (products && products.length > 0) {
+                    allProducts = products;
+                    filteredProducts = products;
+                    displayProducts(products);
+                    updateCartCount();
+                } else {
+                    productsContainer.innerHTML = `
+                        <div class="col-span-full text-center py-12 text-gray-500">
+                            <i class="fas fa-exclamation-circle text-4xl mb-4"></i>
+                            <p>Nenhum produto encontrado.</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Erro ao carregar produtos:', error);
+                productsContainer.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-500">
+                        <i class="fas fa-exclamation-triangle text-4xl mb-4"></i>
+                        <p>Erro ao carregar produtos. Tente novamente mais tarde.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Converter CSV para JSON
+        function csvToJson(csv) {
+            const lines = csv.trim().split('\n');
+            const result = [];
+            const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+
+            for (let i = 1; i < lines.length; i++) {
+                if (!lines[i]) continue;
+                const obj = {};
+                const currentline = lines[i].split(',').map(item => item.trim());
+
+                headers.forEach((header, idx) => {
+                    obj[header] = currentline[idx] || '';
+                });
+
+                if (Object.keys(obj).length > 0) {
+                    result.push(obj);
+                }
+            }
+
+            return result;
+        }
+
+        // Exibir produtos em cards
+        function displayProducts(products) {
+            if (!products || products.length === 0) {
+                productsContainer.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-500">
+                        <i class="fas fa-exclamation-circle text-4xl mb-4"></i>
+                        <p>Nenhum produto encontrado.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let productsHTML = '';
+
+            products.forEach((product, index) => {
+                const productName = product.produto || '';
+                const productDescription = product.descrição || '';
+                const productPrice = product.preço || '0';
+                const productCategory = product.categoria || 'outros';
+                const productShipping = product.frete || '0';
+
+                const productPhotos = [];
+                for (let i = 1; i <= 10; i++) {
+                    const photoKey = `foto${i}`;
+                    if (product[photoKey] && product[photoKey].trim() !== '') {
+                        productPhotos.push(product[photoKey]);
+                    }
+                }
+
+                // Se não houver imagens, não mostrar o produto
+                if (productPhotos.length === 0) return;
+
+                const mainImage = productPhotos[0];
+
+                const formattedPrice = formatPrice(productPrice);
+                const formattedShipping = formatPrice(productShipping);
+
+                productsHTML += `
+                   <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 product-card" data-name="${productName.toLowerCase()}" data-category="${productCategory}">
+                        <div class="relative">
+                            <img src="${mainImage}" alt="${productName || 'Produto'}" class="w-full h-48 object-contain bg-gray-100" />
+                            <button class="absolute top-2 right-2 bg-white rounded-full p-2 shadow-md quick-view-btn" data-index="${index}" aria-label="Visualizar produto">
+                                <i class="fas fa-eye text-primary"></i>
+                            </button>
+                        </div>
+                        <div class="p-4 product-info">
+                            ${productName ? `<h3 class="font-bold text-lg mb-2 text-gray-800 truncate">${productName}</h3>` : ''}
+                            ${productDescription ? `<p class="text-gray-600 text-sm mb-4 line-clamp-2">${productDescription}</p>` : ''}
+                            <div class="price-only">
+                                <span class="text-primary font-bold text-lg">${formattedPrice}</span>
+                            </div>
+                            ${productShipping && productShipping !== '0' ? `<div class="shipping-badge">Frete: ${formattedShipping}</div>` : ''}
+                            <div class="flex justify-center mt-4">
+                                <button class="add-to-cart-btn bg-primary hover:bg-secondary text-white px-3 py-1 rounded-lg transition duration-300" data-index="${index}" aria-label="Adicionar ao carrinho">
+                                    <i class="fas fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            productsContainer.innerHTML = productsHTML;
+
+            document.querySelectorAll('.quick-view-btn').forEach(btn =>
+                btn.addEventListener('click', () => {
+                    const index = parseInt(btn.getAttribute('data-index'));
+                    openProductModal(filteredProducts[index]);
+                })
+            );
+
+            document.querySelectorAll('.add-to-cart-btn').forEach(btn =>
+                btn.addEventListener('click', () => {
+                    const index = parseInt(btn.getAttribute('data-index'));
+                    addToCart(filteredProducts[index]);
+                })
+            );
+        }
+
+        function formatPrice(price) {
+            const number = parseFloat(price.replace(',', '.'));
+            if (isNaN(number)) return price;
+            return new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'MZN', minimumFractionDigits: 0, maximumFractionDigits: 2}).format(number);
+        }
+
+        // Abrir modal do produto (estilo AliExpress)
+        function openProductModal(product) {
+            currentProduct = product;
+
+            modalProductName.textContent = product.produto || 'Produto';
+            modalProductDescription.textContent = product.descrição || 'Sem descrição disponível.';
+            modalProductPrice.textContent = formatPrice(product.preço || '0');
+            
+            // Mostrar informação de frete
+            if (product.frete && product.frete !== '0' && product.frete.trim() !== '') {
+                modalProductShipping.textContent = `Frete: ${formatPrice(product.frete)}`;
+            } else {
+                modalProductShipping.textContent = 'Frete grátis';
+            }
+
+            // Coletar imagens do produto
+            productImages = [];
+            for (let i = 1; i <= 10; i++) {
+                const key = `foto${i}`;
+                if (product[key] && product[key].trim() !== '') {
+                    productImages.push(product[key]);
+                }
+            }
+
+            // Configurar a imagem principal
+            if (productImages.length > 0) {
+                mainProductImage.src = productImages[0];
+                mainProductImage.alt = product.produto || 'Produto';
+            }
+
+            // Limpar e adicionar miniaturas
+            thumbnailContainer.innerHTML = '';
+            productImages.forEach((imgSrc, index) => {
+                const thumb = document.createElement('img');
+                thumb.src = imgSrc;
+                thumb.alt = `Miniatura ${index + 1}`;
+                thumb.className = index === 0 ? 'thumb-img active' : 'thumb-img';
+                thumb.addEventListener('click', () => {
+                    // Atualizar imagem principal
+                    mainProductImage.src = imgSrc;
+                    
+                    // Atualizar miniaturas ativas
+                    document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active'));
+                    thumb.classList.add('active');
+                });
+                thumbnailContainer.appendChild(thumb);
+            });
+
+            quantityInput.value = 1;
+
+            productModal.classList.remove('hidden');
+        }
+
+        // Adicionar ao carrinho
+        function addToCart(product, quantity = 1) {
+            const existingIndex = cart.findIndex(item => item.name === product.produto);
+            if (existingIndex >= 0) {
+                cart[existingIndex].quantity += quantity;
+            } else {
+                cart.push({
+                    name: product.produto,
+                    price: product.preço,
+                    shipping: product.frete,
+                    quantity: quantity,
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showNotification('Produto adicionado ao carrinho!');
+        }
+
+        // Atualizar contador do carrinho
+        function updateCartCount() {
+            const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = total;
+        }
+
+        // Mostrar notificação temporária
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate__animated animate__fadeInDown';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.classList.add('animate__fadeOutUp');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 500);
+            }, 2500);
+        }
+
+        // Atualizar modal do carrinho
+        function updateCartModal() {
+            if (cart.length === 0) {
+                emptyCartMessage.classList.remove('hidden');
+                cartItemsContainer.innerHTML = '';
+                cartSubtotal.textContent = 'MZN 0,00';
+                cartShipping.textContent = 'MZN 0,00';
+                cartTotal.textContent = 'MZN 0,00';
+                return;
+            }
+
+            emptyCartMessage.classList.add('hidden');
+
+            let subtotal = 0;
+            let shipping = 0;
+            let cartHTML = '';
+
+            cart.forEach((item, i) => {
+                const price = parseFloat(item.price.replace(',', '.')) || 0;
+                const ship = parseFloat(item.shipping.replace(',', '.')) || 0;
+                const totalItemPrice = price * item.quantity;
+                const totalShipping = ship * item.quantity;
+
+                subtotal += totalItemPrice;
+                shipping += totalShipping;
+
+                cartHTML += `
+                    <div class="cart-item">
+                        <div class="cart-item-details">
+                            <h4 class="font-medium">${item.name || 'Produto'}</h4>
+                            <p class="text-sm text-gray-600">${formatPrice(item.price)} cada</p>
+                        </div>
+                        <div class="cart-item-actions">
+                            <div class="flex items-center">
+                                <button class="cart-quantity-btn decrease-cart-item" data-index="${i}" aria-label="Diminuir quantidade">-</button>
+                                <input type="number" class="cart-quantity-input" data-index="${i}" value="${item.quantity}" readonly />
+                                <button class="cart-quantity-btn increase-cart-item" data-index="${i}" aria-label="Aumentar quantidade">+</button>
+                            </div>
+                            <button class="cart-remove-btn remove-cart-item" data-index="${i}" aria-label="Remover item do carrinho">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            cartItemsContainer.innerHTML = cartHTML;
+
+            cartSubtotal.textContent = formatPrice(subtotal.toString());
+            cartShipping.textContent = formatPrice(shipping.toString());
+            cartTotal.textContent = formatPrice((subtotal + shipping).toString());
+
+            // Eventos para botões do carrinho
+            document.querySelectorAll('.decrease-cart-item').forEach(btn =>
+                btn.addEventListener('click', () => {
+                    const index = parseInt(btn.getAttribute('data-index'));
+                    updateCartItemQuantity(index, cart[index].quantity - 1);
+                })
+            );
+
+            document.querySelectorAll('.increase-cart-item').forEach(btn =>
+                btn.addEventListener('click', () => {
+                    const index = parseInt(btn.getAttribute('data-index'));
+                    updateCartItemQuantity(index, cart[index].quantity + 1);
+                })
+            );
+
+            document.querySelectorAll('.remove-cart-item').forEach(btn =>
+                btn.addEventListener('click', () => {
+                    const index = parseInt(btn.getAttribute('data-index'));
+                    removeCartItem(index);
+                })
+            );
+        }
+
+        // Atualizar quantidade item do carrinho
+        function updateCartItemQuantity(index, newQuantity) {
+            if (newQuantity < 1) return;
+            cart[index].quantity = newQuantity;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            updateCartModal();
+        }
+
+        // Remover item do carrinho
+        function removeCartItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            updateCartModal();
+        }
+
+        // Filtrar produtos apenas por busca (categorias agora são links de navegação)
+        function filterProducts() {
+            const searchText = searchInput.value.trim().toLowerCase();
+
+            filteredProducts = allProducts.filter(product => {
+                const name = (product.produto || '').toLowerCase();
+                const description = (product.descrição || '').toLowerCase();
+
+                const matchesSearch = !searchText || name.includes(searchText) || description.includes(searchText);
+
+                return matchesSearch;
+            });
+
+            displayProducts(filteredProducts);
+        }
+
+        // Event listener para busca
+        searchInput.addEventListener('input', () => {
+            filterProducts();
+        });
+
+        // Abrir e fechar modal do carrinho
+        cartButton.addEventListener('click', () => {
+            updateCartModal();
+            cartModal.classList.remove('hidden');
+        });
+
+        closeCartModal.addEventListener('click', () => {
+            cartModal.classList.add('hidden');
+        });
+
+        // Abrir e fechar modal de produto
+        closeModal.addEventListener('click', () => {
+            productModal.classList.add('hidden');
+        });
+
+        // Controle de quantidade modal produto
+        decreaseQuantityBtn.addEventListener('click', () => {
+            let val = parseInt(quantityInput.value) || 1;
+            if (val > 1) {
+                quantityInput.value = val - 1;
+            }
+        });
+
+        increaseQuantityBtn.addEventListener('click', () => {
+            let val = parseInt(quantityInput.value) || 1;
+            quantityInput.value = val + 1;
+        });
+
+        // Adicionar ao carrinho pelo modal
+        addToCartModalBtn.addEventListener('click', () => {
+            const quantity = parseInt(quantityInput.value) || 1;
+            addToCart(currentProduct, quantity);
+            productModal.classList.add('hidden');
+        });
+
+        // Função para redirecionar para o WhatsApp
+        function redirectToWhatsApp(product, quantity = 1) {
+            const productName = product.produto || 'Produto';
+            const productPrice = product.preço || '0';
+            const productShipping = product.frete || '0';
+            const formattedPrice = formatPrice(productPrice);
+            const formattedShipping = formatPrice(productShipping);
+            const productImage = productImages.length > 0 ? productImages[0] : '';
+            
+            // Calcular totais
+            const totalPrice = parseFloat(productPrice.replace(',', '.')) * quantity;
+            const totalShipping = parseFloat(productShipping.replace(',', '.')) * quantity;
+            const total = totalPrice + totalShipping;
+            
+            // Criar mensagem para o WhatsApp
+            let message = `Olá! Gostaria de comprar o seguinte produto:\n\n`;
+            message += `*${productName}*\n`;
+            message += `Preço: ${formattedPrice}\n`;
+            message += `Frete: ${formattedShipping}\n`;
+            message += `Quantidade: ${quantity}\n\n`;
+            message += `*Total: ${formatPrice(total.toString())}*\n\n`;
+            
+            if (product.descrição) {
+                message += `*Descrição:* ${product.descrição}\n\n`;
+            }
+            
+            // Adicionar link para a imagem (já que não podemos enviar a imagem diretamente)
+            if (productImage) {
+                message += `*Link para a foto do produto:* ${productImage}\n\n`;
+            }
+            
+            message += `Por favor, confirme a disponibilidade và envie mais detalhes sobre a forma de pagamento e entrega. Obrigado!`;
+            
+            // Codificar a mensagem para URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Criar o link do WhatsApp
+            const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            
+            // Redirecionar para o WhatsApp
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Comprar agora (adiciona e redireciona para WhatsApp)
+        buyNowBtn.addEventListener('click', () => {
+            const quantity = parseInt(quantityInput.value) || 1;
+            addToCart(currentProduct, quantity);
+            productModal.classList.add('hidden');
+            redirectToWhatsApp(currentProduct, quantity);
+        });
+
+        // Finalizar compra (WhatsApp com todos os itens do carrinho)
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) return;
+            
+            let message = `Olá! Gostaria de finalizar a compra dos seguintes produtos:\n\n`;
+            
+            let total = 0;
+            let totalShipping = 0;
+            
+            cart.forEach(item => {
+                const price = parseFloat(item.price.replace(',', '.')) || 0;
+                const shipping = parseFloat(item.shipping.replace(',', '.')) || 0;
+                const itemTotal = price * item.quantity;
+                const itemShipping = shipping * item.quantity;
+                
+                total += itemTotal;
+                totalShipping += itemShipping;
+                
+                message += `*${item.name || 'Produto'}*\n`;
+                message += `Preço unitário: ${formatPrice(item.price)}\n`;
+                message += `Quantidade: ${item.quantity}\n`;
+                message += `Subtotal: ${formatPrice(itemTotal.toString())}\n\n`;
+            });
+            
+            message += `*Frete: ${formatPrice(totalShipping.toString())}*\n`;
+            message += `*Total da compra: ${formatPrice((total + totalShipping).toString())}*\n\n`;
+            message += `Por favor, confirme a disponibilidade và envie mais detalhes sobre a forma de pagamento e entrega. Obrigado!`;
+            
+            // Codificar a mensagem para URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Criar o link do WhatsApp
+            const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            
+            // Redirecionar para o WhatsApp
+            window.open(whatsappURL, '_blank');
+        });
+
+        // Inicialização
+        fetchProducts();
+        updateCartCount();
+    </script>
+</body>
+</html>
