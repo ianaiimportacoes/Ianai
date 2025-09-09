@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Ianai Importações</title>
+    
+    <!-- Bibliotecas CSS Externas -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+   <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Estilos personalizados -->
+    <style>
+     
+    </style>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body class="font-sans">
+    <!-- Topbar -->
+    <div id="topbar">
+        <button id="menu-button" aria-label="Abrir menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h1 id="company-name" class="animate__animated animate__fadeIn">Ianai Importações</h1>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <    <div id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button id="close-sidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav>
+            <a href="index.html" class="sidebar-menu-item">
+                <i class="fas fa-home"></i>
+                Página Principal
+            </a>
+            <a href="servico.html" class="sidebar-menu-item">
+                <i class="fas fa-shipping-fast"></i>
+                Serviços
+            </a>
+            
+            <!-- Categoria de Cursos com Submenu (apenas Importação Básica) -->
+            <a href="#" class="sidebar-menu-item" id="courses-menu">
+                <i class="fas fa-graduation-cap"></i>
+                Cursos
+                <i class="fas fa-chevron-down ml-auto transition-transform duration-300"></i>
+            </a>
+            <div class="submenu">
+                <a href="importacao.html" class="submenu-item">
+                    <i class="fas fa-play-circle"></i>
+                    Importação Básica
+                </a>
+            </div>
+            
+            <a href="contacto.html" class="sidebar-menu-item">
+                <i class="fas fa-envelope"></i>
+                Contacto
+            </a>
+            <a href="loja.html" class="sidebar-menu-item">
+                <i class="fas fa-shopping-cart"></i>
+                Loja Ianai
+            </a>
+            <a href="termos.html" class="sidebar-menu-item">
+                <i class="fas fa-file-contract"></i>
+                Termos e Serviços
+            </a>
+        </nav>
+    </div>
+    <div id="sidebar-overlay"></div>
+    <!-- Hero Section Contacto -->
+    <section class="relative bg-gradient-to-r from-[#005057] to-[#0a7179] text-white py-20 px-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 font-serif animate__animated animate__fadeInDown text-black">
+                Entre em Contacto Conosco
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-white max-w-3xl mx-auto animate__animated animate__fadeInUp">
+                Estamos prontos para responder às suas perguntas e ajudar no seu processo de importação.
+            </p>
+        </div>
+        
+        <!-- Onda decorativa -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+            <svg class="w-full h-16 text-[#005057]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="currentColor"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Seção de Contactos -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold font-serif text-gray-800 mb-4">Nossos Canais de Contacto</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Escolha a forma mais conveniente para entrar em contacto com nossa equipe.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- WhatsApp -->
+                <div class="bg-white p-8 rounded-xl shadow-md contact-card">
+                    <div class="contact-icon bg-green-100 text-green-600 mx-auto">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center text-gray-800">WhatsApp</h3>
+                    <p class="text-gray-600 text-center mb-6">Fale diretamente com nosso atendimento via WhatsApp.</p>
+                    <div class="text-center">
+                        <a href="https://wa.me/258845055213" class="whatsapp-btn text-white font-semibold py-3 px-6 rounded-lg inline-block">
+                            <i class="fab fa-whatsapp mr-2"></i> Chamar no WhatsApp
+                        </a>
+                    </div>
+                    <p class="text-center mt-4 text-gray-500 text-sm">
+                        Também disponível: +258 872 203 899
+                    </p>
+                </div>
+                
+                <!-- Telefone -->
+                <div class="bg-white p-8 rounded-xl shadow-md contact-card">
+                    <div class="contact-icon bg-[#e6f4f5] text-[#005057] mx-auto">
+                        <i class="fas fa-phone-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center text-gray-800">Telefone/SMS</h3>
+                    <p class="text-gray-600 text-center mb-6">Ligue ou envie uma mensagem para nossa equipe.</p>
+                    <div class="text-center space-y-3">
+                        <div>
+                            <a href="tel:+258845055213" class="text-[#005057] font-semibold hover:text-[#00363a] transition">
+                                <i class="fas fa-phone-alt mr-2"></i> +258 84 505 5213
+                            </a>
+                        </div>
+                        <div>
+                            <a href="tel:+258872203899" class="text-[#005057] font-semibold hover:text-[#00363a] transition">
+                                <i class="fas fa-phone-alt mr-2"></i> +258 87 220 3899
+                            </a>
+                        </div>
+                        <div class="pt-2">
+                            <a href="sms:+258845055213" class="text-gray-600 hover:text-gray-800 text-sm">
+                                <i class="fas fa-sms mr-2"></i> Enviar SMS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Email -->
+                <div class="bg-white p-8 rounded-xl shadow-md contact-card">
+                    <div class="contact-icon bg-[#faf3e3] text-[#D4AF37] mx-auto">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center text-gray-800">Email</h3>
+                    <p class="text-gray-600 text-center mb-6">Envie-nos um email para informações gerais ou orçamentos.</p>
+                    <div class="text-center">
+                        <a href="mailto:geral@ianaiimportacoes.com" class="text-[#005057] font-semibold hover:text-[#00363a] transition break-all">
+                            <i class="fas fa-envelope mr-2"></i> ianaiimportacoes@yahoo.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Formulário e Mapa -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Formulário de Contacto -->
+                <div class="contact-form">
+                    <h2 class="text-3xl font-bold font-serif text-gray-800 mb-6">Envie-nos uma Mensagem</h2>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Seu Nome</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005057] focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Seu Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005057] focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Telefone (opcional)</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005057] focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Assunto</label>
+                            <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005057] focus:border-transparent">
+                                <option value="">Selecione um assunto</option>
+                                <option value="orcamento">Solicitar Orçamento</option>
+                                <option value="duvidas">Dúvidas sobre Importação</option>
+                                <option value="cursos">Informações sobre Cursos</option>
+                                <option value="outro">Outro Assunto</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Sua Mensagem</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005057] focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-[#005057] hover:bg-[#00363a] text-white font-semibold py-3 px-6 rounded-lg transition duration-300 w-full">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Mapa e Localização -->
+                <div>
+                    <h2 class="text-3xl font-bold font-serif text-gray-800 mb-6">Nossa Localização</h2>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.895292477963!2d32.57115231502949!3d-25.96898298354976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDU4JzA4LjQiUyAzMsKwMzQnMjEuNiJF!5e0!3m2!1spt-PT!2smz!4v1620000000000!5m2!1spt-PT!2smz" 
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="mt-6 bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Informações de Endereço</h3>
+                        <p class="text-gray-600 mb-2"><i class="fas fa-map-marker-alt mr-2 text-[#005057]"></i>Beira-Gorongosa Moçambique</p>
+                        <p class="text-gray-600"><i class="far fa-clock mr-2 text-[#005057]"></i> Segunda a Sexta: 6h00 - 21h00</p>
+                        <p class="text-gray-600"><i class="far fa-clock mr-2 text-[#005057]"></i> Sábado e Domingo: 7h00 - 17h00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 font-serif">Ianai Importações</h3>
+                    <p class="text-gray-400">Soluções completas para importação da China para Moçambique com segurança e eficiência.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Página Inicial</a></li>
+                        <li><a href="servico.html" class="text-gray-400 hover:text-white transition">Nossos Serviços</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cursos</a></li>
+                        <li><a href="contacto.html" class="text-gray-400 hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contactos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2 text-sm"></i>
+                            <div>
+                                <p>+258 84 505 5213</p>
+                                <p>+258 87 220 3899</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-sm"></i>
+                            <span>ianaiimportacoes@yahoo.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Redes Sociais</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-700 hover:bg-[#005057] w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-[#D4AF37] w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-[#005057] w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://wa.me/258845055213" class="bg-gray-700 hover:bg-green-500 w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white-700 mt-8 pt-8 text-center text-white-400">
+                <p>&copy; 2025 Ianai Importações. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para controlar a sidebar
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('menu-button');
+            const closeSidebar = document.getElementById('close-sidebar');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const coursesMenu = document.getElementById('courses-menu');
+            
+            // Abrir sidebar
+            menuButton.addEventListener('click', function() {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+            });
+            
+            // Fechar sidebar
+            function closeSidebarFunc() {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+            }
+            
+            closeSidebar.addEventListener('click', closeSidebarFunc);
+            sidebarOverlay.addEventListener('click', closeSidebarFunc);
+            
+            // Submenu de cursos
+            if (coursesMenu) {
+                coursesMenu.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const submenu = this.nextElementSibling;
+                    const icon = this.querySelector('.fa-chevron-down');
+                    
+                    submenu.classList.toggle('active');
+                    icon.classList.toggle('rotate-180');
+                });
+            }
+            
+            // Adicionar classe rotate-180 para o CSS
+            const style = document.createElement('style');
+            style.textContent = '.rotate-180 { transform: rotate(180deg); }';
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

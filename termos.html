@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos e Serviços - Ianai Importações</title>
+    
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#006666',  // verde petróleo
+                        secondary: '#008080', // verde petróleo mais claro para gradiente
+                        accent: '#d4af37',    // dourado
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Estilos globais */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            overflow-x: hidden;
+        }
+        
+        /* Topbar */
+        #topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #006666 0%, #008080 100%);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            z-index: 40;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        #menu-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-right: 1rem;
+        }
+        
+        #company-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        /* Sidebar */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+        }
+        
+        #sidebar.active {
+            left: 0;
+        }
+        
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 1rem;
+            background: linear-gradient(135deg, #006666 0%, #008080 100%);
+            color: white;
+        }
+        
+        .sidebar-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+        
+        #close-sidebar {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+        
+        .sidebar-menu-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            color: #4b5563;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .sidebar-menu-item:hover {
+            background-color: #f9fafb;
+            color: #006666;
+        }
+        
+        .sidebar-menu-item i {
+            margin-right: 0.75rem;
+            width: 1.5rem;
+            text-align: center;
+        }
+        
+        .submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .submenu.active {
+            max-height: 500px;
+        }
+        
+        .submenu-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem 0.75rem 3rem;
+            color: #4b5563;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.9rem;
+        }
+        
+        .submenu-item:hover {
+            background-color: #f9fafb;
+            color: #006666;
+        }
+        
+        .submenu-item i {
+            margin-right: 0.5rem;
+            width: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+        
+        #sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 45;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        #sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Conteúdo Principal */
+        .main-content {
+            margin-top: 76px;
+            min-height: calc(100vh - 76px);
+        }
+        
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        /* Prose para conteúdo de texto */
+        .prose h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .prose p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .prose ul {
+            margin-bottom: 1rem;
+        }
+        
+        /* Animações personalizadas */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        /* Responsividade */
+        @media (min-width: 768px) {
+            #company-name {
+                font-size: 1.75rem;
+            }
+            
+            .container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Topbar -->
+    <div id="topbar">
+        <button id="menu-button" aria-label="Abrir menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h1 id="company-name" class="animate__animated animate__fadeIn">Ianai Importações</h1>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button id="close-sidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav>
+            <a href="index.html" class="sidebar-menu-item">
+                <i class="fas fa-home"></i>
+                Página Principal
+            </a>
+            <a href="servico.html" class="sidebar-menu-item">
+                <i class="fas fa-shipping-fast"></i>
+                Serviços
+            </a>
+            
+            <!-- Categoria de Cursos com Submenu (apenas Importação Básica) -->
+            <a href="#" class="sidebar-menu-item" id="courses-menu">
+                <i class="fas fa-graduation-cap"></i>
+                Cursos
+                <i class="fas fa-chevron-down ml-auto transition-transform duration-300"></i>
+            </a>
+            <div class="submenu">
+                <a href="importacao.html" class="submenu-item">
+                    <i class="fas fa-play-circle"></i>
+                    Importação Básica
+                </a>
+            </div>
+            
+            <a href="contacto.html" class="sidebar-menu-item">
+                <i class="fas fa-envelope"></i>
+                Contacto
+            </a>
+            <a href="loja.html" class="sidebar-menu-item">
+                <i class="fas fa-shopping-cart"></i>
+                Loja Ianai
+            </a>
+            <a href="termos.html" class="sidebar-menu-item">
+                <i class="fas fa-file-contract"></i>
+                Termos e Serviços
+            </a>
+        </nav>
+    </div>
+    <div id="sidebar-overlay"></div>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-r from-primary to-secondary text-white py-16 md:py-24 px-4 md:px-0">
+            <div class="container mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight animate__animated animate__fadeInUp">
+                    Termos e Serviços
+                </h1>
+                <p class="text-xl mb-8 text-accent max-w-3xl mx-auto animate__animated animate__fadeInUp animate__delay-1s">
+                    Conheça nossos termos de serviço e políticas de importação
+                </p>
+            </div>
+        </section>
+
+        <!-- Termos Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto bg-gray-50 rounded-xl shadow-md overflow-hidden">
+                    <div class="p-8 md:p-12">
+                        <div class="prose max-w-none">
+                            <h2 class="text-2xl font-bold mb-6 text-gray-800">1. Aceitação dos Termos</h2>
+                            <p class="mb-6 text-gray-700">
+                                Ao utilizar os serviços da Ianai Importações, você concorda em cumprir e estar vinculado a estes Termos e Condições de Serviço. Se você não concordar com qualquer parte destes termos, não deve utilizar nossos serviços.
+                            </p>
+                            
+                            <h2 class="text-2xl font-bold mb-6 text-gray-800">2. Descrição dos Serviços</h2>
+                            <p class="mb-6 text-gray-700">
+                                A Ianai Importações oferece serviços de importação da China para Moçambique, incluindo mas não limitado a:
+                            </p>
+                            <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                                <li>Intermediação com fornecedores chineses</li>
+                                <li>Processamento de documentação aduaneira</li>
+                                <li>Transporte marítimo e aéreo</li>
+                                <li>Desembaraço aduaneiro em Moçambique</li>
+                                <li>Entrega final na sua empresa</li>
+                                <li>Cursos e consultoria em importação</li>
+                            </ul>
+                            
+                            <h2 class="text-2xl font-bold mb-6 text-gray-800">3. Responsabilidades do Cliente</h2>
+                            <p class="mb-4 text-gray-700">
+                                O cliente concorda em:
+                            </p>
+                            <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                                <li>Fornecer informações completas e precisas sobre os produtos a serem importados</li>
+                                <li>Arcar com todos os custos e impostos relacionados à importação</li>
+                                <li>Fornecer documentação necessária em tempo hábil</li>
+                                <li>Verificar a legalidade dos produtos a serem importados</li>
+                                <li>Responsabilizar-se por quaisquer restrições ou proibições de importação</li>
+                            </ul>
+                            
+                            <h2 class="text-2xl font-bold mb-6 text-gray-800">4. Prazos e Entregas</h2>
+                            <p class="mb-6 text-gray-700">
+                                Os prazos de entrega são estimativas baseadas em nossa experiência, mas podem variar devido a fatores fora de nosso controle, como:
+                            </p>
+                            <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                                <li>Atrasos na produção pelos fornecedores</li>
+                                <li>Condições climáticas adversas</li>
+                                <li>Problemas na alfândega</li>
+                                <li>Greves ou problemas políticos</li>
+                                <li>Restrições sanitárias ou outras regulamentações</li>
+                            </ul>
+                            
+                            <h2 class="text-2xl font-bold mb-6 text-gray-800">5. Pagamentos e Custos</h2>
+                            <p class="mb-4 text-gray-700">
+                                Todos os pagamentos devem ser feito conforme acordado no contrato de serviço. Os custos podem incluir:
+                            </p>
+                            <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                                <li>Custo dos produtos junto ao fornecedor</li>
+                                <li>Frete internacional</li>
+                                <li>Seguro da carga</li>
+                                <li>Taxas de desembaraço aduaneiro</li>
+                                <li>Impostos de importação</li>
+                                <li>Taxas de armazenagem (se aplicável)</li>
+                                <li>Nossos honorários de serviço</li>
+                            </ul>
+                            
+                            <h2 class="text-2xl font-bold mb-6 text-gray-800">6. Garantias e Responsabilidades</h2>
+                            <p class="mb-6 text-gray-700">
+                                A Ianai Importações atua como intermediária no processo de importação e não é responsável por:
+                            </p>
+                            <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                                <li>Qualidade dos produtos fornecidos por terceiros</li>
+                                <li>Atrasos causados por fatores externos</li>
+                                <li>Mudanças em regulamentações aduaneiras</li>
+                                <li>Problemas com pagamentos internacionais</li>
+                                <li>Danos à mercadoria durante o transporte</li>
+                            </ul>
+                            <p class="mb-6 text-gray-700">
+                                Recomendamos fortemente a contratação de seguro para cobrir possíveis danos durante o transporte.
+                            </p>
+                            
+                            <h2 class="text-2xl font-bold mb-6 text-gray-800">7. Política de Privacidade</h2>
+                            <p class="mb-6 text-gray-700">
+                                Todas as informações fornecidas pelo cliente serão tratadas com confidencialidade e usadas apenas para fins de prestação dos serviços contratados. Não compartilhamos informações com terceiros sem autorização prévia.
+                            </p>
+                            
+                            <h2 class="text-2xl font-bold mb-6 text-gray-800">8. Alterações nos Termos</h2>
+                            <p class="mb-6 text-gray-700">
+                                Reservamo-nos o direito de modificar estes termos a qualquer momento. As alterações entrarão em vigor imediatamente após sua publicação em nosso site.
+                            </p>
+                            
+                            <h2 class="text-2xl font-bold mb-6 text-gray-800">9. Lei Aplicável</h2>
+                            <p class="mb-6 text-gray-700">
+                                Estes Termos e Condições serão regidos e interpretados de acordo com as leis da República de Moçambique. Qualquer disputa será resolvida nos tribunais competentes da cidade de Maputo.
+                            </p>
+                            
+                            <h2 class="text-2xl font-bold mb-6 text-gray-800">10. Contato</h2>
+                            <p class="mb-6 text-gray-700">
+                                Para quaisquer dúvidas sobre estes Termos e Condições, entre em contato conosco através dos canais disponíveis em nossa página de <a href="contacto.html" class="text-accent hover:underline">contato</a>.
+                            </p>
+                            
+                            <div class="bg-white p-6 rounded-lg border-2 border-accent mt-8">
+                                <h3 class="text-lg font-semibold text-black mb-3">Aviso Importante</h3>
+                                <p class="text-black">
+                                    Estes termos constituem o acordo completo entre você e a Ianai Importações em relação ao uso dos serviços. Ao utilizar nossos serviços, você confirma que leu, entendeu e concordou com todos os termos aqui apresentados.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Ianai Importações</h3>
+                    <p class="text-gray-400">Soluções completas em importação China-Moçambique</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-3">Links Rápidos</h4>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                            <li><a href="servico.html" class="text-gray-400 hover:text-white transition">Serviços</a></li>
+                            <li><a href="contacto.html" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                            <li><a href="termos.html" class="text-gray-400 hover:text-white transition">Termos e Serviços</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-3">Cursos</h4>
+                        <ul class="space-y-2">
+                            <li><a href="importacao.html" class="text-gray-400 hover:text-white transition">Importação Básica</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-3">Contato</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt mr-2"></i>
+                                +258 84 123 4567
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope mr-2"></i>
+                                info@ianaiimportacoes.com
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                Maputo, Moçambique
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2023 Ianai Importações. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Global -->
+    <script>
+        // Menu mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('menu-button');
+            const closeSidebar = document.getElementById('close-sidebar');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const coursesMenu = document.getElementById('courses-menu');
+            const submenu = document.querySelector('.submenu');
+            
+            // Abrir menu
+            menuButton.addEventListener('click', function() {
+                sidebar.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Fechar menu
+            function closeMenu() {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            
+            closeSidebar.addEventListener('click', closeMenu);
+            overlay.addEventListener('click', closeMenu);
+            
+            // Toggle submenu de cursos
+            coursesMenu.addEventListener('click', function(e) {
+                e.preventDefault();
+                submenu.classList.toggle('active');
+                const icon = this.querySelector('.fa-chevron-down');
+                icon.classList.toggle('rotate-180');
+            });
+            
+            // Fechar menu ao clicar em um link
+            const menuLinks = document.querySelectorAll('.sidebar-menu-item, .submenu-item');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (!this.classList.contains('submenu-item') && this.id !== 'courses-menu') {
+                        closeMenu();
+                    }
+                });
+            });
+            
+            // Adicionar classe rotate-180 para animação de seta
+            const style = document.createElement('style');
+            style.textContent = `
+                .rotate-180 {
+                    transform: rotate(180deg);
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
