@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ianai Importações - Importação China-Moçambique | Serviços de Logística</title>
+    
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="Ianai Importações: Especialistas em importação da China para Moçambique. Serviços completos de logística, cursos de importação e consultoria personalizada.">
+    <meta name="keywords" content="importação China Moçambique, logística internacional, importar da China, cursos importação, Ianai Importações, transporte marítimo, comércio exterior">
+    <meta name="author" content="Ianai Importações">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ianaiimportacoes.site/">
+    <meta property="og:title" content="Ianai Importações - Importação China-Moçambique">
+    <meta property="og:description" content="Especialistas em importação da China para Moçambique. Serviços completos de logística e cursos de importação.">
+    <meta property="og:image" content="https://i.ibb.co/yBFjVky6/file-0000000014a46243bf07ac96d47cafb7.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.ianaiimportacoes.site/">
+    <meta property="twitter:title" content="Ianai Importações - Importação China-Moçambique">
+    <meta property="twitter:description" content="Especialistas em importação da China para Moçambique. Serviços completos de logística e cursos de importação.">
+    <meta property="twitter:image" content="https://i.ibb.co/yBFjVky6/file-0000000014a46243bf07ac96d47cafb7.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.ianaiimportacoes.site/">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Ianai Importações",
+      "url": "https://www.ianaiimportacoes.site/",
+      "logo": "https://www.ianaiimportacoes.site/logo.png",
+      "description": "Especialistas em importação da China para Moçambique. Serviços completos de logística e cursos de importação.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Moçambique"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": "Portuguese"
+      }
+    }
+    </script>
+    
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#006666',   // Verde-petróleo
+              secondary: '#004c4c', // Verde-petróleo mais escuro
+              accent: '#d4af37',    // Dourado
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Montserrat', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    
+    <style>
+        /* Estilos globais */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Topbar */
+        #topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        #topbar.scrolled {
+            padding: 0.5rem 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        #menu-button {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #006666;
+            cursor: pointer;
+            margin-right: 1rem;
+        }
+        
+        #company-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #006666;
+            margin: 0;
+        }
+        
+        /* Sidebar */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+        }
+        
+        #sidebar.open {
+            left: 0;
+        }
+        
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .sidebar-title {
+            font-weight: 600;
+            color: #006666;
+        }
+        
+        #close-sidebar {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: #6b7280;
+            cursor: pointer;
+        }
+        
+        .sidebar-menu-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            color: #374151;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .sidebar-menu-item:hover, .sidebar-menu-item.active {
+            background-color: #f0f9f9;
+            color: #006666;
+            border-left-color: #006666;
+        }
+        
+        .sidebar-menu-item i {
+            margin-right: 0.75rem;
+            width: 1.5rem;
+            text-align: center;
+        }
+        
+        /* Submenu */
+        .submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .submenu.open {
+            max-height: 200px;
+        }
+        
+        .submenu-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem 0.75rem 3.5rem;
+            color: #4b5563;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .submenu-item:hover, .submenu-item.active {
+            background-color: #f0f9f9;
+            color: #006666;
+        }
+        
+        .submenu-item i {
+            margin-right: 0.75rem;
+            font-size: 0.875rem;
+        }
+        
+        /* Overlay */
+        #sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        #sidebar-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Conteúdo principal */
+        .main-content {
+            margin-top: 76px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #004c4c;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        /* Animações personalizadas */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        /* Responsividade */
+        @media (min-width: 768px) {
+            #topbar {
+                padding: 1rem 2rem;
+            }
+            
+            #topbar.scrolled {
+                padding: 0.75rem 2rem;
+            }
+            
+            #company-name {
+                font-size: 1.75rem;
+            }
+        }
+        
+        /* Estilo para o menu quando aberto */
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        /* Rotação para ícones */
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+        
+        /* Transição suave para elementos */
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+    
+</head>
+<body class="bg-white">
+    <!-- Topbar -->
+    <div id="topbar">
+        <button id="menu-button" aria-label="Abrir menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h1 id="company-name" class="animate__animated animate__fadeIn">Ianai Importações</h1>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button id="close-sidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav>
+            <a href="index.html" class="sidebar-menu-item">
+                <i class="fas fa-home"></i>
+                Página Principal
+            </a>
+            <a href="servico.html" class="sidebar-menu-item">
+                <i class="fas fa-shipping-fast"></i>
+                Serviços
+            </a>
+            
+            <!-- Categoria de Cursos com Submenu (apenas Importação Básica) -->
+            <a href="#" class="sidebar-menu-item" id="courses-menu">
+                <i class="fas fa-graduation-cap"></i>
+                Cursos
+                <i class="fas fa-chevron-down ml-auto transition-transform duration-300"></i>
+            </a>
+            <div class="submenu">
+                <a href="importacao.html" class="submenu-item">
+                    <i class="fas fa-play-circle"></i>
+                    Importação Básica
+                </a>
+            </div>
+            
+            <a href="contacto.html" class="sidebar-menu-item">
+                <i class="fas fa-envelope"></i>
+                Contacto
+            </a>
+            <a href="loja.html" class="sidebar-menu-item">
+                <i class="fas fa-shopping-cart"></i>
+                Loja Ianai
+            </a>
+            <a href="termos.html" class="sidebar-menu-item">
+                <i class="fas fa-file-contract"></i>
+                Termos e Serviços
+            </a>
+        </nav>
+    </div>
+    <div id="sidebar-overlay"></div>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <!-- Banner Section -->
+        <section class="relative bg-gradient-to-r from-primary to-secondary text-white py-16 md:py-24 px-4 md:px-0">
+            <div class="container mx-auto flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight animate__animated animate__fadeInUp">
+                        Importe seus produtos da China para Moçambique
+                    </h2>
+                    <p class="text-xl mb-8 text-accent/80 animate__animated animate__fadeInUp animate__delay-1s">
+                        Soluções completas para sua importação com segurança e eficiência
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 animate__animated animate__fadeInUp animate__delay-2s">
+                        <a href="Loja Ianai.html" class="bg-white text-primary hover:bg-gray-50 px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 transform hover:scale-105 shadow-lg text-center">
+                            Solicitar Orçamento
+                        </a>
+                        <a href="servico.html" class="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 transform hover:scale-105 text-center">
+                            Saiba Mais
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="https://i.ibb.co/yBFjVky6/file-0000000014a46243bf07ac96d47cafb7.png" 
+                         alt="Ianai Importações - Especialistas em importação China-Moçambique" 
+                         class="rounded-lg shadow-2xl w-full h-auto object-cover">
+                </div>
+            </div>
+            
+            <!-- Decorative elements -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+                <svg class="w-full h-16 text-secondary" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="currentColor"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 animate__animated animate__fadeIn">Por que escolher a Ianai Importações?</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 animate__animated animate__fadeInUp">
+                        <div class="text-primary mb-4">
+                            <i class="fas fa-shipping-fast text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Logística Completa</h3>
+                        <p class="text-gray-600">Cuidamos de todo o processo de transporte, desde a China até sua empresa em Moçambique.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="text-primary mb-4">
+                            <i class="fas fa-hand-holding-usd text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Custos Competitivos</h3>
+                        <p class="text-gray-600">Preços acessíveis e transparentes, sem taxas escondidas ou surpresas desagradáveis.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="text-primary mb-4">
+                            <i class="fas fa-shield-alt text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Segurança Garantida</h3>
+                        <p class="text-gray-600">Seus produtos segurados em todas as etapas do transporte e entrega.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Depoimentos Atualizada -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 animate__animated animate__fadeIn">Depoimentos de Nossos Clientes</h2>
+                
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden animate__animated animate__fadeInUp">
+                        <div class="md:flex">
+                            <!-- Galeria de Fotos do Cliente -->
+                            <div class="md:w-2/5 p-4 bg-gradient-to-br from-primary/10 to-secondary/10">
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="rounded-lg overflow-hidden border-2 border-primary/30">
+                                        <img src="https://i.ibb.co/7xSzBjN4/Screenshot-20250814-234515.png" 
+                                             alt="Produto importado 1 - Ianai Importações" 
+                                             class="w-full h-32 object-cover hover:scale-105 transition-transform duration-300">
+                                    </div>
+                                    <div class="rounded-lg overflow-hidden border-2 border-primary/30">
+                                        <img src="https://i.ibb.co/23H34zLC/Screenshot-20250814-235514.png" 
+                                             alt="Produto importado 2 - Ianai Importações" 
+                                             class="w-full h-32 object-cover hover:scale-105 transition-transform duration-300">
+                                    </div>
+                                    <div class="rounded-lg overflow-hidden border-2 border-primary/30">
+                                        <img src="https://i.ibb.co/qLsH86Bv/Screenshot-20250814-235453.png" 
+                                             alt="Produto importado 3 - Ianai Importações" 
+                                             class="w-full h-32 object-cover hover:scale-105 transition-transform duration-300">
+                                    </div>
+                                    <div class="rounded-lg overflow-hidden border-2 border-primary/30">
+                                        <img src="https://i.ibb.co/gFrG3tdx/Screenshot-20250814-235446.png" 
+                                             alt="Produto importado 4 - Ianai Importações" 
+                                             class="w-full h-32 object-cover hover:scale-105 transition-transform duration-300">
+                                    </div>
+                                </div>
+                                <div class="mt-2 rounded-lg overflow-hidden border-2 border-primary/30">
+                                    <img src="https://i.ibb.co/d0F3XtvN/Screenshot-20250814-235438.png" 
+                                         alt="Produto importado 5 - Ianai Importações" 
+                                         class="w-full h-32 object-cover hover:scale-105 transition-transform duration-300">
+                                </div>
+                            </div>
+                            
+                            <!-- Texto do Depoimento -->
+                            <div class="md:w-3/5 p-6 md:p-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="text-accent mr-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">5/5</span>
+                                </div>
+                                <blockquote class="text-gray-700 italic mb-6">
+                                    "Vim por este meio agradecer a empresa Ianai importações pela mais uma confiança de trazer este produto, e encorajar aos demais que ainda duvidam. Deus abençoe a empresa em alusão."
+                                </blockquote>
+                                <div class="flex items-center">
+                                    <div class="bg-primary/20 text-secondary rounded-full p-3 mr-4">
+                                        <i class="fas fa-user text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Cliente Satisfeito</h4>
+                                        <p class="text-gray-500 text-sm">Importação de produtos da China</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Selo de Qualidade -->
+                                <div class="mt-6 flex items-center text-sm text-primary">
+                                    <i class="fas fa-check-circle mr-2"></i>
+                                    <span>Compra verificada • Cliente desde 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation dots -->
+                <div class="flex justify-center mt-8">
+                    <button class="w-3 h-3 rounded-full bg-primary mx-1 focus:outline-none"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 mx-1 focus:outline-none"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 mx-1 focus:outline-none"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Ianai Importações. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Global -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos do menu
+            const menuButton = document.getElementById('menu-button');
+            const closeButton = document.getElementById('close-sidebar');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const body = document.body;
+            const topbar = document.getElementById('topbar');
+            
+            // Elementos do submenu
+            const coursesMenu = document.getElementById('courses-menu');
+            const submenu = document.querySelector('.submenu');
+            const chevron = coursesMenu ? coursesMenu.querySelector('.fa-chevron-down') : null;
+            
+            // Efeito de scroll na topbar
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    topbar.classList.add('scrolled');
+                } else {
+                    topbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Abrir menu
+            if (menuButton) {
+                menuButton.addEventListener('click', function() {
+                    sidebar.classList.add('open');
+                    overlay.classList.add('open');
+                    body.classList.add('menu-open');
+                });
+            }
+            
+            // Fechar menu (botão X)
+            if (closeButton) {
+                closeButton.addEventListener('click', function() {
+                    sidebar.classList.remove('open');
+                    overlay.classList.remove('open');
+                    body.classList.remove('menu-open');
+                });
+            }
+            
+            // Fechar menu (clicar no overlay)
+            if (overlay) {
+                overlay.addEventListener('click', function() {
+                    sidebar.classList.remove('open');
+                    overlay.classList.remove('open');
+                    body.classList.remove('menu-open');
+                });
+            }
+            
+            // Ativar item do menu clicado
+            const menuItems = document.querySelectorAll('.sidebar-menu-item:not(#courses-menu)');
+            menuItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active class from all items
+                    menuItems.forEach(i => i.classList.remove('active'));
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    
+                    // Close the sidebar
+                    sidebar.classList.remove('open');
+                    overlay.classList.remove('open');
+                    body.classList.remove('menu-open');
+                });
+            });
+            
+            // Controle do submenu de cursos
+            if (coursesMenu && submenu && chevron) {
+                coursesMenu.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    submenu.classList.toggle('open');
+                    chevron.classList.toggle('rotate-180');
+                });
+            }
+            
+            // Marcar item ativo com base na URL atual
+            function setActiveMenuItem() {
+                const currentPage = window.location.pathname.split('/').pop();
+                const menuLinks = document.querySelectorAll('.sidebar-menu-item, .submenu-item');
+                
+                menuLinks.forEach(link => {
+                    const linkHref = link.getAttribute('href');
+                    if (linkHref && linkHref === currentPage ||
+                        (currentPage === '' && linkHref === 'index.html')) {
+                        link.classList.add('active');
+                        
+                        // Se for um submenu item, abrir o submenu
+                        if (link.classList.contains('submenu-item')) {
+                            const parentMenu = link.closest('.menu-with-submenu');
+                            if (parentMenu) {
+                                const submenu = parentMenu.querySelector('.submenu');
+                                const chevron = parentMenu.querySelector('.fa-chevron-down');
+                                if (submenu) submenu.classList.add('open');
+                                if (chevron) chevron.classList.add('rotate-180');
+                            }
+                        }
+                    }
+                });
+            }
+            
+            setActiveMenuItem();
+        });
+    </script>
+</body>
+</html>
